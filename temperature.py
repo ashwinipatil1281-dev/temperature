@@ -1,10 +1,15 @@
 import sys
 
-if len(sys.argv) != 2:
-    print("Usage: python temp.py <temperature>")
-    sys.exit(1)
+default_temp = 25.0
 
-temp = float(sys.argv[1])
+if len(sys.argv) == 2:
+    temp = float(sys.argv[1])
+    source = "User Input"
+else:
+    temp = default_temp
+    source = "Self-assigned"
+
+print(f"Temperature: {temp} ({source})")
 
 if temp < 15:
     print("Cold")
